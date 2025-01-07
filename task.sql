@@ -1,12 +1,14 @@
 CREATE DATABASE ShopDB;
 USE ShopDB;
 
--- Створення таблиці для зберігання країн
+-- Create a table to store countries
 CREATE TABLE Countries (
     ID INT,
     Name VARCHAR(50),
     PRIMARY KEY (ID)
 ) ENGINE=InnoDB;
+
+-- Create a table for caching GeoIP data (Columns: ID, IP Range, CountryID)
 
 CREATE TABLE GeoIPCache (
     ID INT,
@@ -37,5 +39,4 @@ CREATE TABLE ProductReporting (
     Date DATE,
     ProductName VARCHAR(255),
     Orders INT,
-    PRIMARY KEY (Date, ProductName)
 ) ENGINE=CSV;
