@@ -12,10 +12,10 @@ CREATE TABLE Countries (
 
 CREATE TABLE GeoIPCache (
     ID INT,
-    IPRangeі  INT,
+    IPRange  INT,
     CountryID INT,
     PRIMARY KEY (ID)
-) ENGINE=GeoIPCache;
+) ENGINE=MyISAM;
 
 -- Create a table for storing product descriptions for different countries (Columns: ID, CountryID, ProductID, Description )
 CREATE TABLE ProductDescription (
@@ -29,7 +29,7 @@ CREATE TABLE ProductDescription (
 -- Create a table for storing logs. For now we don't need to save them, but we need to implement functionality (Columns: ID, Time, LogRecord)
 CREATE TABLE Logs (
     ID INT,
-    Timestampі Date,
+    Timestamp Date,
     Message VARCHAR(255),
     PRIMARY KEY (ID)
 ) ENGINE=MyISAM ;
@@ -38,5 +38,4 @@ CREATE TABLE ProductReporting (
     Date,
     ProductName VARCHAR(50),
     Orders VARCHAR(50)
-    PRIMARY KEY (ID)
 ) ENGINE=CSV ;
