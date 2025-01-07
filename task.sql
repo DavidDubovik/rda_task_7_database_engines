@@ -8,15 +8,14 @@ CREATE TABLE Countries (
     PRIMARY KEY (ID)
 ) ENGINE=InnoDB;
 
--- Створення таблиці для кешування GeoIP даних (Колонки: ID, IP діапазон, CountryID)
 CREATE TABLE GeoIPCache (
     ID INT,
-    IPRange VARCHAR(100),
+    IPRange VARCHAR(50),
     CountryID INT,
     PRIMARY KEY (ID)
 ) ENGINE=MEMORY;
 
--- Створення таблиці для зберігання описів продуктів для різних країн (Колонки: ID, CountryID, ProductID, Description)
+-- Create ProductDescription table with InnoDB engine
 CREATE TABLE ProductDescription (
     ID INT,
     Description TEXT,
@@ -25,17 +24,18 @@ CREATE TABLE ProductDescription (
     PRIMARY KEY (ID)
 ) ENGINE=InnoDB;
 
--- Створення таблиці для зберігання логів. Зараз ми не потребуємо їх зберігати, але потрібно реалізувати функціональність (Колонки: ID, Time, LogRecord)
+-- Create Logs table with BLACKHOLE engine
 CREATE TABLE Logs (
     ID INT,
-    Timestamp DATETIME,
-    Message TEXT
+    Timestamp TIMESTAMP,
+    Message TEXT,
+    PRIMARY KEY (ID)
 ) ENGINE=BLACKHOLE;
 
--- Створення таблиці для зберігання звітних даних, які будуть відправлені в окремий додаток у форматі CSV для аналітики (Колонки: Date, ProductName, Orders)
+-- Create ProductReporting table with CSV engine
 CREATE TABLE ProductReporting (
     Date DATE,
-    ProductName VARCHAR(50),
+    ProductName VARCHAR(255),
     Orders INT,
     PRIMARY KEY (Date, ProductName)
 ) ENGINE=CSV;
