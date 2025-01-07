@@ -35,9 +35,7 @@ CREATE TABLE Logs (
 ) ENGINE=MyISAM ;
 -- Create a table for storing reporting data, which will be send to a separate application in the CSV format for analytics purposes (Columns:  Date, ProductName, Orders)
 CREATE TABLE ProductReporting (
-    ID INT AUTO_INCREMENT,
     Date DATE,
     ProductName VARCHAR(50),
     Orders INT,
-    PRIMARY KEY (ID)
 ) ENGINE=CSV;
