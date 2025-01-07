@@ -1,15 +1,14 @@
-CREATE DATABASE ShopDB; 
-USE ShopDB; 
+CREATE DATABASE ShopDB;
+USE ShopDB;
 
--- Create a table to store countries 
+-- Створення таблиці для зберігання країн
 CREATE TABLE Countries (
     ID INT,
     Name VARCHAR(50),
     PRIMARY KEY (ID)
 ) ENGINE=InnoDB;
 
--- Create a table for caching GeoIP data (Columns: ID, IP Range, CountryID)
-
+-- Створення таблиці для кешування GeoIP даних (Колонки: ID, IP діапазон, CountryID)
 CREATE TABLE GeoIPCache (
     ID INT,
     IPRange VARCHAR(100),
@@ -17,7 +16,7 @@ CREATE TABLE GeoIPCache (
     PRIMARY KEY (ID)
 ) ENGINE=MEMORY;
 
--- Create a table for storing product descriptions for different countries (Columns: ID, CountryID, ProductID, Description )
+-- Створення таблиці для зберігання описів продуктів для різних країн (Колонки: ID, CountryID, ProductID, Description)
 CREATE TABLE ProductDescription (
     ID INT,
     Description TEXT,
@@ -26,14 +25,14 @@ CREATE TABLE ProductDescription (
     PRIMARY KEY (ID)
 ) ENGINE=InnoDB;
 
--- Create a table for storing logs. For now we don't need to save them, but we need to implement functionality (Columns: ID, Time, LogRecord)
+-- Створення таблиці для зберігання логів. Зараз ми не потребуємо їх зберігати, але потрібно реалізувати функціональність (Колонки: ID, Time, LogRecord)
 CREATE TABLE Logs (
     ID INT,
     Timestamp DATETIME,
-    Message TEXT,
-    PRIMARY KEY (ID)
-) ENGINE=BLACKHOLE ;
--- Create a table for storing reporting data, which will be send to a separate application in the CSV format for analytics purposes (Columns:  Date, ProductName, Orders)
+    Message TEXT
+) ENGINE=BLACKHOLE;
+
+-- Створення таблиці для зберігання звітних даних, які будуть відправлені в окремий додаток у форматі CSV для аналітики (Колонки: Date, ProductName, Orders)
 CREATE TABLE ProductReporting (
     Date DATE,
     ProductName VARCHAR(50),
