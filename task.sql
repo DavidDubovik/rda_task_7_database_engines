@@ -24,7 +24,7 @@ CREATE TABLE ProductDescription (
     ProductID INT,
     CountryID INT,
     PRIMARY KEY (ID)
-) ENGINE=InnoDB;
+) ENGINE=MyISAM;
 
 -- Create Logs table with BLACKHOLE engine
 CREATE TABLE Logs (
