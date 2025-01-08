@@ -19,10 +19,10 @@ CREATE TABLE GeoIPCache (
 
 -- Create ProductDescription table with InnoDB engine
 CREATE TABLE ProductDescription (
-    ID INT,
-    Description TEXT,
-    ProductID INT,
-    CountryID INT,
+     ID INT NOT NULL,
+    Description TEXT NOT NULL,
+    ProductID INT NOT NULL,
+    CountryID INT NOT NULL,
     PRIMARY KEY (ID)
 ) ENGINE=MyISAM;
 
