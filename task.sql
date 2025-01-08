@@ -36,7 +36,10 @@ CREATE TABLE Logs (
 
 -- Create ProductReporting table with CSV engine
 CREATE TABLE ProductReporting (
+    ID INT,
     Date DATE,
     ProductName VARCHAR(255),
-    Orders INT
+    Orders INT,
+    PRIMARY KEY (ID)
+
 ) ENGINE=CSV;
