@@ -19,7 +19,7 @@ CREATE TABLE GeoIPCache (
 
 -- Create ProductDescription table with InnoDB engine
 CREATE TABLE ProductDescription (
-     ID INT NOT NULL,
+    ID INT NOT NULL,
     Description TEXT NOT NULL,
     ProductID INT NOT NULL,
     CountryID INT NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE Logs (
 
 -- Create ProductReporting table with CSV engine
 CREATE TABLE ProductReporting (
-    ID INT,
+    ID INT NOT NULL,
     Date DATE,
     ProductName VARCHAR(255),
     Orders INT,
